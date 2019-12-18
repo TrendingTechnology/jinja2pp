@@ -1,4 +1,4 @@
-# Jinja2++
+# [Jinja2++](https://ms-jpq.github.io/jinja2pp/)
 
 Jinja2++ is a drop in single file solution for templating with **Variable Precedence**.
 
