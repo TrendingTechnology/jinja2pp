@@ -617,7 +617,7 @@ def parse_args():
       help=dry_run_help)
   parser.add_argument(
       "-n", "--no-diffs",
-      action="store_false",
+      action="store_true",
       help=no_diffs_help)
   parser.add_argument(
       "--formatter",
@@ -667,7 +667,7 @@ async def main():
   else:
     commit_changes(args.out, updated, removed)
 
-  if args.no_diffs:
+  if not args.no_diffs:
     announce_diffs(args.formatter, updated)
 
   announce_changes(
