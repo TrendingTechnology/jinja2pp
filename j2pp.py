@@ -674,7 +674,7 @@ async def main():
   total = len(updated) + len(unchanged)
   t2 = timeit.default_timer()
   delta = str(datetime.timedelta(seconds=t2-t1))
-  pprn(f"Templated {total} files in {delta}s", centre=True)
+  pprn(f"Rendered {total} files in {delta}s", centre=True)
 
 
 if __name__ == "__main__":
