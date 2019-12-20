@@ -472,7 +472,7 @@ def announce_diffs(formatter, updated):
     print(pretty_diff)
 
 
-def announce_changes(src, out, unchanged, updated, removed):
+def announce_changes(src, out, updated, removed):
   updated_paths = [path for path, _, _ in updated]
 
   def announce(type, changes):
@@ -483,17 +483,12 @@ def announce_changes(src, out, unchanged, updated, removed):
         print(f"{path}.j2")
 
   zipped = zip(
-      ["REMOVED", "UPDATED", "UNCHANGED"],
-      [removed, updated_paths, unchanged])
+      ["REMOVED", "UPDATED"],
+      [removed, updated_paths])
 
   for announcement in zipped:
     announce(*announcement)
 
-  if (len(removed) == 0 and
-      len(updated) == 0 and
-          len(unchanged) == 0):
-    pprn(f"Nothing has changed, did you make a typo?",
-         colour=colours.FAIL)
 
 
 #################### ############### ####################
@@ -673,13 +668,13 @@ async def main():
   announce_changes(
       args.src,
       args.out,
-      unchanged,
       updated,
       removed)
 
+  total = len(updated) + len(unchanged)
   t2 = timeit.default_timer()
   delta = str(datetime.timedelta(seconds=t2-t1))
-  pprn(f"{delta}s", centre=True)
+  pprn(f"Templated {total} files in {delta}s", centre=True)
 
 
 if __name__ == "__main__":
