@@ -77,27 +77,73 @@ add more of your own!
 
 ## Usage
 
-`--src`:
+`--src`
 
-`--out`:
+Put all your .j2 templates here.
 
-`--var-files`:
+`--out`
 
-`--exclude`:
+Your finished templates go here.
 
-`--import-filters`:
+`--exclude`
 
-`--inject-before-vars`:
+Any file paths in exclude will be skipped. i.e. --exclude .s .skip
 
-`--inject-before-render`:
 
-`--extra-vars`:
+`--var-files`
 
-`--delimiter`:
+A |VAR_FILE| is an executable: .py, .sh, et al.
+|VAR_FILES| are how you do variable injections.
+JSON |> stdin >=> stdout |> JSON.
+|VAR_FILES| are placed in the file hierarchy
+beween *.j2 and SRC.
+|VAR_FILES| closes to *.j2 have higher precedence.
 
-`--dry-run`:
 
-`--no-diffs`:
+`--import-filters`
 
-`--formatter`:
+All functions in IMPORT_FILTERS will be included as
+j2 filters. Must be python files.
+
+
+`--inject-before-vars`
+
+Same semantics as |VAR_FILES|,
+except run before each |VAR_FILE|.
+
+
+`--inject-before-render`
+
+Same semantics as |VAR_FILES|,
+except run before each .j2 file is rendered.
+
+
+`--extra-vars`
+
+Inject variables with JSON.
+Highest precedence, also available to all var files.
+
+
+`--delimiter`
+
+Default is 🦄.
+Any stdout in VAR_FILES before the last occurance
+of 🦄 will be treated as comments.
+🦄 is entirely optional.
+
+
+`--dry-run`
+
+Just do a diff, dont write to file.
+
+
+`--no-diffs`
+
+Dont print diff.
+
+
+`--formatter`
+
+Used to print diff, if your terminal is kinda wonky,
+pick one with less colours.
 
