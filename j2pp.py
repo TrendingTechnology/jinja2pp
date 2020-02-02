@@ -512,6 +512,7 @@ Your finished templates go here.
 
 exclude_files_help = """
 Any file paths in exclude will be skipped.
+i.e. --exclude .s .skip
 """
 
 var_files_help = """
