@@ -17,11 +17,19 @@ import sys
 import timeit
 from pprint import pprint
 
-import jinja2
-import pygments
-import pygments.formatters as formatters
-import pygments.lexers as lexers
-import pygments.lexers.special as sp_lexer
+try:
+  import jinja2
+  import pygments
+  import pygments.formatters as formatters
+  import pygments.lexers as lexers
+  import pygments.lexers.special as sp_lexer
+except:
+  packages = ''.join(["jinja2", "pygments"])
+  print(f"Missing required packages, one of: {packages}")
+  print(f"pip3 install {packages}")
+  print()
+  print()
+
 
 #################### ###################### ####################
 #################### Domain Agnostic Region ####################
@@ -490,11 +498,9 @@ def announce_changes(src, out, updated, removed):
     announce(*announcement)
 
 
-
 #################### ############### ####################
 #################### ArgParse Region ####################
 #################### ############### ####################
-
 
 src_help = """
 Put all your .j2 templates here.
