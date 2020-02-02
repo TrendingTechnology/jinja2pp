@@ -10,25 +10,25 @@ You can use **ANY language!**
 
 ```txt
 src
-|── vars.py* <- [[base variables]]
+|── vars.perl* <- [[base variables]]
 ├── filters.py* <- inject ((J2 filters)) with ~vanilla python~ functions!
 ...
-├── render_inject.py* <- inject && overwrite [pre-render context] variables
-├── var_inject.py* <- inject && overwrite [pre-script context] variables 
+├── render_inject.rb* <- inject && overwrite [pre-render context] variables
+├── var_inject.sh* <- inject && overwrite [pre-script context] variables 
 ...
 ├── monitoring/
 │  ├── grafana/
 │  │  ├── templates/
 │  │  ├── Chart.yaml.j2
-│  │  └── vars.sh* <- [overwrite] variables here
+│  │  └── vars.js* <- [overwrite] variables here
 │  ├── iperf/
 │  │  ├── templates/
 │  │  ├── Chart.yaml.j2
-│  │  └── vars.py* <- [overwrite] variables here
+│  │  └── vars.fsi* <- [overwrite] variables here
 │  ├── prometheus/
 │  │  ├── templates/
 │  │  ├── Chart.yaml.j2
-│  │  └── vars.rb* <- [overwrite] variables here
+│  │  └── vars.exe* <- [overwrite] variables here
 ...
 ```
 
@@ -46,7 +46,9 @@ src
 
 ### Dynamic J2 filter import
 
-Write your filters as vanilla Python functions
+Write your filters as vanilla Python functions.
+
+like so:
 
 ```python
 def drop_first(lst):
@@ -62,7 +64,7 @@ def base64(x, indent=0):
 
 The following `[context variables]` will be injected before each var_file / template.
 
-Add your own!
+add more of your own!
 
 ```json
 {"src": "...",
@@ -75,4 +77,27 @@ Add your own!
 
 ## Usage
 
+`--src`:
+
+`--out`:
+
+`--var-files`:
+
+`--exclude`:
+
+`--import-filters`:
+
+`--inject-before-vars`:
+
+`--inject-before-render`:
+
+`--extra-vars`:
+
+`--delimiter`:
+
+`--dry-run`:
+
+`--no-diffs`:
+
+`--formatter`:
 
