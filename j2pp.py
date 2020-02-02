@@ -512,7 +512,6 @@ Your finished templates go here.
 
 exclude_files_help = """
 Any file paths in exclude will be skipped.
-Default=[.s., .skip]
 """
 
 var_files_help = """
@@ -584,8 +583,8 @@ def parse_args():
       help=var_files_help)
   parser.add_argument(
       "-k", "--exclude",
-      nargs="*",
-      default=[".s.", ".skip"],
+      nargs="+",
+      default=[],
       help=exclude_files_help
   )
   parser.add_argument(
