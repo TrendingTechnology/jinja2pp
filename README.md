@@ -31,10 +31,17 @@ src
 ...
 ```
 
+### Dry runs
+
+![dryrun](https://raw.githubusercontent.com/ms-jpq/jinja2pp/master/screenshot/dryrun.png)
+
+![res](https://raw.githubusercontent.com/ms-jpq/jinja2pp/master/screenshot/res.png)
 
 ### Syntax highlighted diff
 
-### Dry runs
+![diff1](https://raw.githubusercontent.com/ms-jpq/jinja2pp/master/screenshot/diff1.png)
+
+![diff2](https://raw.githubusercontent.com/ms-jpq/jinja2pp/master/screenshot/diff2.png)
 
 ### Context injection
 
