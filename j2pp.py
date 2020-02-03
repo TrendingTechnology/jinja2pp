@@ -503,7 +503,7 @@ def announce_changes(src, out, updated, removed):
 #################### ############### ####################
 
 src_help = """
-Put all your .j2 templates here.
+Put all your .j2 templates here, along with var_files.
 """
 
 out_help = """
@@ -516,12 +516,12 @@ i.e. --exclude .s .skip
 """
 
 var_files_help = """
-A |VAR_FILE| is an executable: .py, .sh, et al.
-|VAR_FILES| are how you do variable injections.
-JSON |> stdin >=> stdout |> JSON.
-|VAR_FILES| are placed in the file hierarchy
+A VAR_FILE is an executable: .py, .sh, et al.
+VAR_FILES are how you do variable injections.
+JSON - stdin |> stdout - JSON.
+VAR_FILES are placed in the file hierarchy
 beween *.j2 and SRC.
-|VAR_FILES| closes to *.j2 have higher precedence.
+VAR_FILES closes to *.j2 have higher precedence.
 """
 
 extra_vars_help = """
@@ -530,12 +530,12 @@ Highest precedence, also available to all var files.
 """
 
 inject_before_vars_help = """
-Same semantics as |VAR_FILES|,
-except run before each |VAR_FILE|.
+Same semantics as VAR_FILES,
+except run before each VAR_FILE.
 """
 
 inject_before_render_help = """
-Same semantics as |VAR_FILES|,
+Same semantics as VAR_FILES,
 except run before each .j2 file is rendered.
 """
 
