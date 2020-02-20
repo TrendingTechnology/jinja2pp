@@ -14,7 +14,6 @@ We assemble a series of cascading var_files based on the file hierarchy to overw
 
 We also do context injection, in the same fashion, ie context as the local path of each var_file / template, etc
 
-
 ## Features
 
 ### Variable precedence
@@ -25,7 +24,7 @@ src
 ├── filters.py* <- inject ((J2 filters)) with ~vanilla python~ functions!
 ...
 ├── render_inject.rb* <- inject && overwrite [pre-render context] variables
-├── var_inject.sh* <- inject && overwrite [pre-script context] variables 
+├── var_inject.sh* <- inject && overwrite [pre-script context] variables
 ...
 ├── monitoring/
 │  ├── grafana/
@@ -108,7 +107,6 @@ Your finished templates go here.
 
 Any file paths in exclude will be skipped. i.e. --exclude .s .skip
 
-
 `--var-files`
 
 A VAR_FILE is an executable: .py, .sh, et al.
@@ -118,30 +116,25 @@ VAR_FILES are placed in the file hierarchy
 beween \*.j2 and SRC.
 VAR_FILES closes to \*.j2 have higher precedence.
 
-
 `--import-filters`
 
 All functions in IMPORT_FILTERS will be included as
 j2 filters. Must be python files.
-
 
 `--inject-before-vars`
 
 Same semantics as VAR_FILES,
 except run before each VAR_FILE.
 
-
 `--inject-before-render`
 
 Same semantics as VAR_FILES,
 except run before each .j2 file is rendered.
 
-
 `--extra-vars`
 
 Inject variables with JSON.
 Highest precedence, also available to all var files.
-
 
 `--delimiter`
 
@@ -150,19 +143,15 @@ Any stdout in VAR_FILES before the last occurance
 of 🦄 will be treated as comments.
 🦄 is entirely optional.
 
-
 `--dry-run`
 
 Just do a diff, dont write to file.
-
 
 `--no-diffs`
 
 Dont print diff.
 
-
 `--formatter`
 
 Used to print diff, if your terminal is kinda wonky,
 pick one with less colours.
-
