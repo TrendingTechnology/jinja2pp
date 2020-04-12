@@ -24,7 +24,7 @@ try:
   import pygments.lexers as lexers
   import pygments.lexers.special as sp_lexer
 except:
-  packages = ''.join(["jinja2", "pygments"])
+  packages = ' '.join(["jinja2", "pygments"])
   print(f"Missing required packages, one of: {packages}")
   print(f"pip3 install {packages}")
   print()
