@@ -10,7 +10,6 @@ import importlib.util
 import inspect
 import itertools as i
 import json
-import multiprocessing
 import os
 import re
 import shutil
@@ -30,8 +29,6 @@ except:
   print(f"pip3 install {packages}")
   print()
   print()
-
-semaphore = a.BoundedSemaphore(multiprocessing.cpu_count())
 
 
 #################### ###################### ####################
