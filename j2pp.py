@@ -10,6 +10,7 @@ import importlib.util
 import inspect
 import itertools as i
 import json
+import multiprocessing
 import os
 import re
 import shutil
@@ -29,6 +30,8 @@ except:
   print(f"pip3 install {packages}")
   print()
   print()
+
+semaphore = a.BoundedSemaphore(multiprocessing.cpu_count())
 
 
 #################### ###################### ####################
@@ -174,15 +177,16 @@ def spit(content, file):
 
 
 async def pipe(program, *args, stdin=None):
-  process = await a.create_subprocess_exec(
-      *[program, *args],
-      stdin=a.subprocess.PIPE,
-      stdout=a.subprocess.PIPE,
-      stderr=a.subprocess.PIPE)
+  async with semaphore:
+    process = await a.create_subprocess_exec(
+        *[program, *args],
+        stdin=a.subprocess.PIPE,
+        stdout=a.subprocess.PIPE,
+        stderr=a.subprocess.PIPE)
 
-  msg = stdin.encode() if stdin else None
-  stdout, stderr = await process.communicate(msg)
-  return stdout.decode(), stderr.decode(), process.returncode
+    msg = stdin.encode() if stdin else None
+    stdout, stderr = await process.communicate(msg)
+    return stdout.decode(), stderr.decode(), process.returncode
 
 
 #################### ####################### ####################
