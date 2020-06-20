@@ -44,15 +44,15 @@ src
 
 ### Dry runs
 
-![dryrun.png](https://raw.githubusercontent.com/ms-jpq/jinja2pp/master/screenshot/dryrun.png)
+![dryrun.png](https://raw.githubusercontent.com/ms-jpq/jinja2pp/j2/screenshot/dryrun.png)
 
-![res.png](https://raw.githubusercontent.com/ms-jpq/jinja2pp/master/screenshot/res.png)
+![res.png](https://raw.githubusercontent.com/ms-jpq/jinja2pp/j2/screenshot/res.png)
 
 ### Syntax highlighted diff
 
-![diff1.png](https://raw.githubusercontent.com/ms-jpq/jinja2pp/master/screenshot/diff1.png)
+![diff1.png](https://raw.githubusercontent.com/ms-jpq/jinja2pp/j2/screenshot/diff1.png)
 
-![diff2.png](https://raw.githubusercontent.com/ms-jpq/jinja2pp/master/screenshot/diff2.png)
+![diff2.png](https://raw.githubusercontent.com/ms-jpq/jinja2pp/j2/screenshot/diff2.png)
 
 ### Dynamic J2 filter import
 
